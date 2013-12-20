@@ -43,10 +43,17 @@ var RYBA = {
                 setActive();
             }
         } else {
-            console.log('2');
             setActive();
         }
     }
 };
 window.onload = RYBA.updateMenu;
 window.onhashchange = RYBA.updateMenu;
+
+$(document).ready(function() {
+    $('html, body, *').mousewheel(function(e, delta) {
+        $('.b-slider__item')[0].scrollLeft -= (delta * 40);
+        e.preventDefault();
+        console.log('scroll')
+    });
+});

@@ -27,8 +27,7 @@ window.onhashchange = RYBA.updateMenu;
 
 $(document).ready(function() {
     $('html, body, *').mousewheel(function(e, delta) {
-        $('.b-slider__item')[0].scrollLeft -= (delta * 20);
         e.preventDefault();
-        console.log('scroll')
+        $('.r-gallery')[0].scrollLeft -= (delta * 20);
     });
 });

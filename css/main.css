@@ -6,7 +6,7 @@
 
 body {
     min-height: 650px;
-    background: url(../img/lamp.jpg) top center no-repeat #CCC;
+    background: url(../img/lamp.jpg) top center repeat-x #d8d3cf;
     overflow: auto;
 }
 .container {
@@ -79,7 +79,6 @@ body {
     display: -ms-flex;
     display: flex;
     -webkit-flex-pack: justify;
-        -ms-flex-pack: justify;
        -moz-flex-pack: justify;
         -ms-flex-pack: justify;
             flex-pack: justify;
@@ -94,6 +93,9 @@ body {
 .b-link {
     color: #333;
     text-decoration: none;
+}
+.b-link_bold {
+    font-weight: bold;
 }
 .b-link:active,
 .b-link:hover {
@@ -123,4 +125,54 @@ body {
 }
 .b-slider__item:target {
     margin-top: 0;
+}
+.about__wrapper {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.person {
+    display: inline-block;
+    vertical-align: top;
+    width: 330px;
+    padding:30px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #EEE;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.person__head {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.person__photo {
+    
+}
+.person__bio {
+    font-size: 14px;
+    line-height: 16px;
+}
+.contacts {
+    width: 70%;
+    left: 15%;
+    right: 15%;
+}
+.contacts__header {
+    text-align: center;
+    font-size: 17px;
+    line-height: 22px;
+}
+.contacts__phone, .contacts__persons {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contacts__phonenumber {
+    padding-left: 5px;
+    font-size: 17px;
+}
+.contacts__name {
+    padding-left: 40px;
+    font-size: 16px;
 }

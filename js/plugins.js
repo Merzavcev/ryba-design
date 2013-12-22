@@ -1,28 +1,3 @@
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
-
-    while (length--) {
-        method = methods[length];
-
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
-    }
-}());
-
-// Place any jQuery/helper plugins in here.
-
 var RYBA = {
     updateMenu : function() {
         var hash = window.location.hash,
@@ -52,7 +27,7 @@ window.onhashchange = RYBA.updateMenu;
 
 $(document).ready(function() {
     $('html, body, *').mousewheel(function(e, delta) {
-        $('.b-slider__item')[0].scrollLeft -= (delta * 40);
+        $('.b-slider__item')[0].scrollLeft -= (delta * 20);
         e.preventDefault();
         console.log('scroll')
     });

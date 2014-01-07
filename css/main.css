@@ -25,14 +25,14 @@ body {
 .b-heading__main {
     text-align: center;
     margin-top: 0;
-    font: 36px/36px 'Lato', sans-serif;
+    font: 36px/1 'Lato', sans-serif;
     text-shadow: 0 1px rgba(255,255,255,0.5);
 }
 .b-heading__sub {
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;    
-    font: 18px/18px 'PT Sans', sans-serif;
+    font: 18px/1.25 'PT Sans', sans-serif;
     text-shadow: 0 1px rgba(255,255,255,0.5);
 }
 .b-heading__link:link,
@@ -48,6 +48,13 @@ body {
 .b-heading__link:active {
     color: #999;
     text-decoration: none;
+}
+.b-ul, .b-ol {
+    margin: 12px 0;
+}
+.b-ul__item, .b-ol__item  {
+    line-height: 1.25;
+    margin-bottom: 10px;
 }
 .r-gallery {
     font-size: 0;
@@ -108,10 +115,11 @@ body {
     height: 100%;
     position: absolute;
     top: 0;
+    overflow: hidden;
     -webkit-transition: margin-top .6s ease-in-out;
        -moz-transition: margin-top .6s ease-in-out;
          -o-transition: margin-top .6s ease-in-out;
-            transition: margin-top .6s ease-in-out;    
+            transition: margin-top .6s ease-in-out;  
 }
 .b-slider__item:target {
     margin-top: 0;
@@ -126,6 +134,9 @@ body {
     line-height: 16px;
     margin: 0;
     padding-bottom: 15px;
+}
+.slider {
+    height: 320px;
 }
 .about__wrapper {
     margin-right: -10px;
@@ -183,3 +194,15 @@ body {
     padding-left: 40px;
     font-size: 16px;
 }
+/*
+    lionbars css rules https://github.com/Charuru/lionbars
+ */
+.lb-v-dummy { width: 100%; display: block; height: 1px; }
+.lb-h-dummy { height: 100%; display: block; width: 1px; }
+.lb-clear { clear: both; }
+.lb-wrap { z-index: 0; overflow: auto; position: relative; }
+/*.lb-scrollbar-wrap { position: absolute; left: 0; top: 0; }*/
+.lb-v-scrollbar { z-index: 1; position: absolute; right: 2px; top: 2px; width: 7px; height: 100%; background: #cfcfcf; opacity: 0.3; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+.lb-h-scrollbar { z-index: 1; position: absolute; bottom: 2px; left: 2px; width: 100%; height: 7px; background: #cfcfcf; opacity: 0.3; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+.lb-v-scrollbar-slider { position: absolute; width: 7px; height: 50px; left: 0; top: 0; background: #000; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+.lb-h-scrollbar-slider { position: absolute; height: 7px; width: 50px; left: 0; top: 0; background: #000; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }

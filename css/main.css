@@ -17,7 +17,7 @@ body {
 .b-slider {
     position: relative;
     overflow:hidden;
-    height: 365px;    
+    height: 365px;
 }
 .b-heading {
     margin-bottom: 20px;
@@ -31,7 +31,7 @@ body {
 .b-heading__sub {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 15px;    
+    margin-bottom: 1em;    
     font: 1.1em/1.25 'PT Sans', sans-serif;
     text-shadow: 0 1px rgba(255,255,255,0.5);
 }
@@ -63,15 +63,13 @@ p {
     margin: .75em 0;
 }
 
-.r-gallery {
+.gallery {
     font-size: 0;
-    margin-left: -10px;
-    margin-right: -10px;
-    width: 400px;
-    height: 200px;
-    overflow: visible;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
 }
-.r-gallery__item {
+.gallery__item {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
@@ -79,11 +77,11 @@ p {
     height: 150px;
     background-color: #999;
 }
-.r-gallery__item img {
+.gallery__item img {
     display: none;
 }
 
-.r-common-menu {
+.common-menu {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: -moz-flex;
@@ -135,8 +133,12 @@ p {
 .b-slider__item:target {
     margin-top: 0;
 }
+.slider {
+    overflow-y: auto;
+    height: 325px;
+}
 .portfolio__wrapper {
-    padding: 1em 0;
+    padding: .2em 0;
 }
 .portfolio__object,
 .portfolio__location,
@@ -145,9 +147,6 @@ p {
     line-height: 1.25;
     margin: 0;
     padding-bottom: .75em;
-}
-.slider {
-    height: 320px;
 }
 .about__wrapper {
     margin-right: -1%;
@@ -229,15 +228,8 @@ p {
     }
     .b-slider {
         height: 500px;
-    } 
+    }
+    .slider {
+        height: 446px;
+    }
 }
-/* Tiny Scrollbar */
-.slider { width: 100%; margin: 20px 0 10px; }
-.slider .viewport { width: 98%; height: 320px; overflow: hidden; position: relative; }
-.slider .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
-.slider .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
-.slider .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
-.slider .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
-.slider .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
-.slider .disable { display: none; }
-.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }

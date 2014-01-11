@@ -12,7 +12,7 @@ var RYBA = {
             $activeItem = $('.b-link_active'),
             defaultItem = '#portfolio',
             setActive = function() {
-                $('.r-common-menu [href=' + hash + ']').addClass('b-link_active');
+                $('.common-menu [href=' + hash + ']').addClass('b-link_active');
             };
         
         if(hash == ''){
@@ -38,7 +38,7 @@ $(document).ready(function() {
     //     e.preventDefault();
     //     $('.r-gallery')[0].scrollLeft -= (delta * 20);
     // });
-    $('.r-gallery').on('mouseover', '.r-gallery__item', function() {
+    $('.gallery').on('mouseover', '.gallery__item', function() {
         var data = $(this).data(),
           $spans = $('.portfolio__wrapper span');
 
@@ -46,8 +46,6 @@ $(document).ready(function() {
         $spans.eq(1).text(data.location);
         $spans.eq(2).text(data.year);
     })
-
-    $('.slider').tinyscrollbar();
     // $('.r-gallery, .slider').lionbars();
     // $(window).on('resize',function() {
     //     if (window.matchMedia("(min-width: 1800px)").matches) {

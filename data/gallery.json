@@ -1,0 +1,15 @@
+{
+    "id" : 1,
+    "name" : "house",
+    "title" : "Интерьер дома",
+    "desc" : "Описание проекта интерьера дома",
+    "year" : 2014,
+    "images" : [
+        "img/gallery/house/01.jpg",
+        "img/gallery/house/02.jpg"
+    ],
+    "cover" : [
+        "img/gallery/house/01.cover.jpg",
+        "img/gallery/house/02.cover.jpg"
+    ]
+}

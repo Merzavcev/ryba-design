@@ -33,3 +33,9 @@ $('.gallery').on('mouseover', '.gallery__item', function() {
     $spans.eq(1).text(data.location);
     $spans.eq(2).text(data.year);
 })
+
+$('.showProjectLink').openDOMWindow({
+    width: 685,
+    height: 365,
+    eventType:'click'
+}); 

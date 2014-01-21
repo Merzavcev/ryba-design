@@ -101,7 +101,10 @@ p {
     padding-top: 2em;
     text-align: center;
     text-shadow: 0 1px rgba(255,255,255,0.5);
-} 
+}
+.hidden {
+    display: none;
+}
 .b-link {
     color: #333;
     text-decoration: none;

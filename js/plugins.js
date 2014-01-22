@@ -37,5 +37,7 @@ $('.gallery').on('mouseover', '.gallery__item', function() {
 $('.showProjectLink').openDOMWindow({
     width: 685,
     height: 365,
-    eventType:'click'
+    eventType: 'click',
+    borderSize: 0,
+    windowBGColor: 'whitesmoke'
 }); 

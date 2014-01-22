@@ -20,8 +20,8 @@
           <h1 class="sub-header">Дизайн интерьера, архитектура, ландшафтный дизайн.</h1>
           <div class="projects-grid">
             <div class="projects-grid__line">
-              <div class="project-grid__item">1</div>
-              <div class="project-grid__item">2</div>
+              <div class="project-grid__item"><a href="#projects__house" class="project-grid__link showProjectLink">1</a></div>
+              <div class="project-grid__item"><a href="#projects__park" class="project-grid__link showProjectLink">2</a></div>
               <div class="project-grid__item">3</div>
             </div>
             <div class="projects-grid__line">
@@ -110,43 +110,62 @@
         <div class="footer__info">RYBA-Design — архитектурное проектирование коттеджей, малоэтажных зданий различного назначения, дизайн интерьеров, ландшафтный дизайн. Индивидуальный подход. Профессиональное исполнение.</div> 
       </footer>
     </div>
-<p><a href="#projects__house" class="showProjectLink">Open DOM Window</a></p>
-
-
-<section id="projects__house" class="project hidden">
-  <h1 class="sub-header project__title">{{house}}</h1>
-  <div class="project__wrapper">
-    <p class="project__title"><strong>Объект:</strong> <span>{{house}}</span></p>
-    <p class="project__location"><strong>Расположение:</strong> <span>{{location}}</span></p>
-    <p class="project__year"><strong>Проектирование:</strong> <span>{{year}}</span></p>
-  </div>
-  <div class="gallery">
-    <div class="gallery__item" data-object="интерьер загородного дома" data-location="Ярославская область, поселок Коприно" data-year="2013 г.">
-      <img src="img/sample-01.jpg" alt="..." >
+<div id="projects__house" class="hidden">
+  <section class="project">
+    <h1 class="sub-header project__title">{{house}}</h1>
+    <div class="project__wrapper">
+      <p class="project__title"><strong>Объект:</strong> <span>{{house}}</span></p>
+      <p class="project__location"><strong>Расположение:</strong> <span>{{location}}</span></p>
+      <p class="project__year"><strong>Проектирование:</strong> <span>{{year}}</span></p>
     </div>
-    <div class="gallery__item" data-object="проект стадиона" data-location="Москва, Лужники" data-year="2014 г.">
-      <img src="img/sample-02.jpg" alt="..." >
+    <div class="gallery">
+      <div class="gallery__item" data-object="интерьер загородного дома" data-location="Ярославская область, поселок Коприно" data-year="2013 г.">
+      </div>
+      <div class="gallery__item" data-object="проект стадиона" data-location="Москва, Лужники" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="проект вокзала" data-location="Сочи, Адлер" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="интерьер ресторана" data-location="Москва, Тверская, д.3" data-year="2013 г.">
+      </div>
+      <div class="gallery__item" data-object="интерьер загородного дома" data-location="Ярославская область, поселок Коприно" data-year="2013 г.">
+      </div>
+      <div class="gallery__item" data-object="проект стадиона" data-location="Москва, Лужники" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="проект вокзала" data-location="Сочи, Адлер" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="интерьер ресторана" data-location="Москва, Тверская, д.3" data-year="2013 г.">
+      </div>
     </div>
-    <div class="gallery__item" data-object="проект вокзала" data-location="Сочи, Адлер" data-year="2014 г.">
-      <img src="img/sample-03.jpg" alt="..." >
+  </section>
+</div>
+<div id="projects__park" class="hidden">
+  <section class="project">
+    <h1 class="sub-header project__title">{{park}}</h1>
+    <div class="project__wrapper">
+      <p class="project__title"><strong>Объект:</strong> <span>{{park}}</span></p>
+      <p class="project__location"><strong>Расположение:</strong> <span>{{location}}</span></p>
+      <p class="project__year"><strong>Проектирование:</strong> <span>{{year}}</span></p>
     </div>
-    <div class="gallery__item" data-object="интерьер ресторана" data-location="Москва, Тверская, д.3" data-year="2013 г.">
-      <img src="img/sample-04.jpg" alt="..." >
+    <div class="gallery">
+      <div class="gallery__item" data-object="интерьер загородного дома" data-location="Ярославская область, поселок Коприно" data-year="2013 г.">
+      </div>
+      <div class="gallery__item" data-object="проект стадиона" data-location="Москва, Лужники" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="проект вокзала" data-location="Сочи, Адлер" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="интерьер ресторана" data-location="Москва, Тверская, д.3" data-year="2013 г.">
+      </div>
+      <div class="gallery__item" data-object="интерьер загородного дома" data-location="Ярославская область, поселок Коприно" data-year="2013 г.">
+      </div>
+      <div class="gallery__item" data-object="проект стадиона" data-location="Москва, Лужники" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="проект вокзала" data-location="Сочи, Адлер" data-year="2014 г.">
+      </div>
+      <div class="gallery__item" data-object="интерьер ресторана" data-location="Москва, Тверская, д.3" data-year="2013 г.">
+      </div>
     </div>
-    <div class="gallery__item" data-object="интерьер загородного дома" data-location="Ярославская область, поселок Коприно" data-year="2013 г.">
-      <img src="img/sample-01.jpg" alt="..." >
-    </div>
-    <div class="gallery__item" data-object="проект стадиона" data-location="Москва, Лужники" data-year="2014 г.">
-      <img src="img/sample-02.jpg" alt="..." >
-    </div>
-    <div class="gallery__item" data-object="проект вокзала" data-location="Сочи, Адлер" data-year="2014 г.">
-      <img src="img/sample-03.jpg" alt="..." >
-    </div>
-    <div class="gallery__item" data-object="интерьер ресторана" data-location="Москва, Тверская, д.3" data-year="2013 г.">
-      <img src="img/sample-04.jpg" alt="..." >
-    </div>
-  </div>
-</section>
+  </section>
+</div>
     <script src="js/vendor/jquery-1.10.1.min.js"></script>
     <script src="js/vendor/jquery.DOMWindow.js"></script>
     <script src="js/plugins.js"></script>

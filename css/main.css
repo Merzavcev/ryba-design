@@ -142,6 +142,9 @@ p {
     overflow-y: auto;
     /*height: 325px;*/
 }
+.portfolio {
+    overflow-y: auto;
+}
 .project {
     /*background-color: #d8d3cf;*/
 }

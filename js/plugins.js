@@ -39,5 +39,6 @@ $('.showProjectLink').openDOMWindow({
     height: 365,
     eventType: 'click',
     borderSize: 0,
-    windowBGColor: 'whitesmoke'
+    windowBGColor: 'whitesmoke',
+    anchoredSelector: '.'+$(this).data().title
 }); 

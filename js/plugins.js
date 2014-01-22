@@ -42,3 +42,7 @@ $('.showProjectLink').openDOMWindow({
     windowBGColor: 'whitesmoke',
     anchoredSelector: '.'+$(this).data().title
 }); 
+
+$('.blackscreen').fadeOut('slow', function() {
+    $('body').removeClass('page_loading');
+});

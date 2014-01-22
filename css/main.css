@@ -55,10 +55,10 @@ body {
 p {
     margin: .75em 0;
 }
-.b-ul, .b-ol {
+.ul, .ol {
     margin: .5em 0;
 }
-.b-ul__item, .b-ol__item  {
+.ul__item, .ol__item  {
     margin: .75em 0;
 }
 
@@ -140,7 +140,7 @@ p {
 }
 .slider {
     overflow-y: auto;
-    height: 325px;
+    /*height: 325px;*/
 }
 .portfolio__wrapper {
     padding: .2em 0;

@@ -1,4 +1,19 @@
 var RYBA = {
+    buildGrid : function(data) {
+        var coverArray = {};
+        // последние добавленные проекты стоят первыми
+        for (var i = data.length - 1; i >= 0; i--) {
+            var currentItem = data[i];
+            coverArray[currentItem.name]= currentItem.cover[0];
+            $('[data-name="' + currentItem.name + '"]').css('background','url('+ currentItem.cover[0] +')');
+        };
+        console.log(coverArray);
+    },
+    show : function() {
+        $('.blackscreen').fadeOut('slow', function() {
+            $('body').removeClass('page_loading');
+        });
+    },
     updateMenu : function() {
         var hash = window.location.hash,
             $activeItem = $('.b-link_active'),
@@ -42,7 +57,13 @@ $('.showProjectLink').openDOMWindow({
     windowBGColor: 'whitesmoke',
     anchoredSelector: '.'+$(this).data().title
 }); 
+$.
+    when($.getJSON('data/gallery.json')).
+    then(function(data) {
+        RYBA.buildGrid(data);
+        console.log(data);
 
-$('.blackscreen').fadeOut('slow', function() {
-    $('body').removeClass('page_loading');
-});
+        RYBA.show();
+    }, function() {
+        alert('No data :(');
+    });

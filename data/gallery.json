@@ -1,15 +1,33 @@
-{
-    "id" : 1,
-    "name" : "house",
-    "title" : "Интерьер дома",
-    "desc" : "Описание проекта интерьера дома",
-    "year" : 2014,
-    "images" : [
-        "img/gallery/house/01.jpg",
-        "img/gallery/house/02.jpg"
-    ],
-    "cover" : [
-        "img/gallery/house/01.cover.jpg",
-        "img/gallery/house/02.cover.jpg"
-    ]
-}
+[
+    {
+        "id" : 1,
+        "name" : "house",
+        "title" : "Интерьер дома",
+        "desc" : "Описание проекта интерьера дома",
+        "year" : 2014,
+        "images" : [
+            "img/gallery/house/01.jpg",
+            "img/gallery/house/02.jpg"
+        ],
+        "cover" : [
+            "img/gallery/house/01.cover.jpg",
+            "img/gallery/house/02.cover.jpg"
+        ]
+    },
+    {
+        "id" : 2,
+        "name" : "park",
+        "title" : "Интерьер дома",
+        "desc" : "Описание проекта интерьера дома",
+        "year" : 2014,
+        "images" : [
+            "img/gallery/park/01.jpg",
+            "img/gallery/park/02.jpg"
+        ],
+        "cover" : [
+            "img/gallery/park/01.cover.jpg",
+            "img/gallery/park/02.cover.jpg",
+            "img/gallery/park/02.cover.jpg"
+        ]
+    }
+]

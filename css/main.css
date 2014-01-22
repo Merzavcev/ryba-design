@@ -202,7 +202,7 @@ p {
     width: 210px;
     height: 140px;
 
-    background-color: whitesmoke;
+    background-color: #000;
 }
 .project-grid__link {
     position: absolute;

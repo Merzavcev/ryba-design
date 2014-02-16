@@ -6,14 +6,17 @@ var RYBA = {
             var currentItem = data[i];
             coverArray[currentItem.name]= currentItem.cover[0];
             $('[data-name="' + currentItem.name + '"]').css('background','url('+ currentItem.cover[0] +')');
-        };
+        }
         console.log(coverArray);
+
     },
+    // показать страницу, убрать плавно blackscreen
     show : function() {
         $('.blackscreen').fadeOut('slow', function() {
             $('body').removeClass('page_loading');
         });
     },
+    // логика учета состояния меню
     updateMenu : function() {
         var hash = window.location.hash,
             $activeItem = $('.b-link_active'),
@@ -21,8 +24,8 @@ var RYBA = {
             setActive = function() {
                 $('.common-menu [href=' + hash + ']').addClass('b-link_active');
             };
-        
-        if(hash == ''){
+
+        if(hash === ''){
             window.location = window.location + defaultItem;
             return false;
         }
@@ -35,35 +38,22 @@ var RYBA = {
         } else {
             setActive();
         }
+    },
+    init : function () {
+    // страница работает только с данными о проектах
+        $.
+            when($.getJSON('data/gallery.json')).
+            then(function(data) {
+
+                RYBA.buildGrid(data);
+                RYBA.show();
+                window.onload = RYBA.updateMenu;
+                window.onhashchange = RYBA.updateMenu;
+
+            }, function() {
+                console.log('No data');
+            });
     }
 };
-window.onload = RYBA.updateMenu;
-window.onhashchange = RYBA.updateMenu;
 
-$('.gallery').on('mouseover', '.gallery__item', function() {
-    var data = $(this).data(),
-      $spans = $('.portfolio__wrapper span');
-
-    $spans.eq(0).text(data.object);
-    $spans.eq(1).text(data.location);
-    $spans.eq(2).text(data.year);
-})
-
-$('.showProjectLink').openDOMWindow({
-    width: 685,
-    height: 365,
-    eventType: 'click',
-    borderSize: 0,
-    windowBGColor: 'whitesmoke',
-    anchoredSelector: '.'+$(this).data().title
-}); 
-$.
-    when($.getJSON('data/gallery.json')).
-    then(function(data) {
-        RYBA.buildGrid(data);
-        console.log(data);
-
-        RYBA.show();
-    }, function() {
-        alert('No data :(');
-    });
+RYBA.init();

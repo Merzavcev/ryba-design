@@ -255,11 +255,11 @@ p {
     margin-right: -1.25em;
 }
 .person__photo_shumilin {
-    background: url('/img/persons/shumilin.jpg') no-repeat;
+    background: url('../img/persons/shumilin.jpg') no-repeat;
     background-size: cover;
 }
 .person__photo_bleskina {
-    background: url('/img/persons/bleskina.jpg') no-repeat;
+    background: url('../img/persons/bleskina.jpg') no-repeat;
     background-size: cover;
 }
 .person__bio {

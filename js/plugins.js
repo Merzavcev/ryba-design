@@ -1,14 +1,26 @@
+/*global Mustache*/
 var RYBA = {
+    buildPortfolio : function(data) {
+        var tmpl = $('.tmpl-projects').text();
+        //debugger;
+        $('.projects-grid__line').html(Mustache.render(tmpl, data));
+
+        return this;
+    },
     buildGrid : function(data) {
+        // debugger;
         var coverArray = {},
-            l = data.length;
+            projects = data.projects,
+            l = projects.length,
+            tmpl = $('.tmpl-project').text();
+
         // последние добавленные проекты стоят первыми
         for (var i = l - 1; i >= 0; i--) {
-            var currentItem = data[i];
-            coverArray[currentItem.name]= currentItem.cover[0];
-            $('[data-name="' + currentItem.name + '"]').css('background','url('+ currentItem.cover[0] +')');
+            var currentItem = projects[i];
+            //coverArray[currentItem.name] = currentItem.cover[0];
+            //$('[data-name="' + currentItem.name + '"]').css('background-image','url('+ currentItem.cover[0] +')');
+            $('.pages').append(Mustache.render(tmpl, currentItem));
         }
-        console.log(coverArray);
 
         return this;
     },
@@ -23,14 +35,18 @@ var RYBA = {
     // логика учета состояния меню
     updateMenu : function() {
         var hash = window.location.hash,
+            $activeHashItem = $('.common-menu [href=' + hash + ']'),
             $activeItem = $('.b-link_active'),
             defaultItem = '#portfolio',
             setActive = function() {
-                $('.common-menu [href=' + hash + ']').addClass('b-link_active');
+                if ($activeHashItem.length) {
+                    $('.common-menu [href=' + hash + ']').addClass('b-link_active');
+                }
             };
 
         if(hash === ''){
-            window.location = window.location + defaultItem;
+            window.location += defaultItem;
+
             return false;
         }
 
@@ -50,13 +66,10 @@ var RYBA = {
         $.
             when($.getJSON('data/gallery.json')).
             then(function(data) {
-
                 RYBA.
+                    buildPortfolio(data).
                     buildGrid(data).
                     show();
-                window.onload = this.updateMenu;
-                window.onhashchange = this.updateMenu;
-
             }, function() {
                 console.log('No data');
             });
@@ -64,5 +77,6 @@ var RYBA = {
         return this;
     }
 };
-
+window.onload = RYBA.updateMenu;
+window.onhashchange = RYBA.updateMenu;
 RYBA.init();

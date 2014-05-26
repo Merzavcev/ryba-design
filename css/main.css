@@ -48,7 +48,7 @@ body {
 .sub-header {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 1em;    
+    margin-bottom: 1em;
     font: 1.1em/1.25 'PT Sans', sans-serif;
     text-shadow: 0 1px rgba(255,255,255,0.5);
 }
@@ -57,9 +57,7 @@ body {
     color: #000;
     text-decoration: none;
     -webkit-transition: color .2s ease-in-out;
-       -moz-transition: color .2s ease-in-out;
-         -o-transition: color .2s ease-in-out;
-            transition: color .2s ease-in-out;  
+            transition: color .2s ease-in-out;
 }
 .header__link:hover,
 .header__link:active {
@@ -92,6 +90,9 @@ p {
     width: 225px;
     height: 150px;
     background-color: #999;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .gallery__item img {
     display: none;
@@ -135,7 +136,7 @@ p {
     text-decoration: none;
 }
 .b-link_active {
-    font-weight: bold;    
+    font-weight: bold;
     color: #FFF;
     text-decoration: none;
 }
@@ -148,16 +149,14 @@ p {
     top: 0;
     overflow: hidden;
     -webkit-transition: margin-top .6s ease-in-out;
-       -moz-transition: margin-top .6s ease-in-out;
-         -o-transition: margin-top .6s ease-in-out;
-            transition: margin-top .6s ease-in-out;  
+            transition: margin-top .6s ease-in-out;
 }
 .slider__item:target {
     margin-top: 0;
 }
-.slider {
-    overflow-y: auto;
-    /*height: 325px;*/
+.paper {
+    overflow-y: scroll;
+    height: 325px;
 }
 .portfolio {
     overflow-y: auto;
@@ -179,7 +178,7 @@ p {
 .projects-grid__line {
     margin: 30px 0 10px;
 
-    display: -ms-flexbox;
+/*    display: -ms-flexbox;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -194,15 +193,20 @@ p {
         -ms-justify-content:space-between;
        -moz-justify-content:space-between;
             justify-content:space-between;
+
+    flex-wrap: wrap;*/
 }
 .project-grid__item {
     position: relative;
-    /*display: inline-block;*/
+    display: inline-block;
 
     width: 210px;
     height: 140px;
 
     background-color: #000;
+
+    margin-bottom: 15px;
+    margin-right: 15px;
 }
 .project-grid__link {
     position: absolute;
@@ -211,6 +215,10 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .about__wrapper {
     margin-right: -1%;
@@ -245,6 +253,14 @@ p {
     margin-left: 5px;
     margin-bottom: 5px;
     margin-right: -1.25em;
+}
+.person__photo_shumilin {
+    background: url('/img/persons/shumilin.jpg') no-repeat;
+    background-size: cover;
+}
+.person__photo_bleskina {
+    background: url('/img/persons/bleskina.jpg') no-repeat;
+    background-size: cover;
 }
 .person__bio {
     font-size: .9em;
@@ -281,7 +297,7 @@ p {
 /*
     for big screens ex. 1920 x 1080
  */
-@media screen and (min-width: 1800px) {
+/*@media screen and (min-width: 1800px) {
     body {
         background-size: 1920px auto;
     }
@@ -296,4 +312,4 @@ p {
     .slider {
         height: 446px;
     }
-}
+}*/

@@ -182,20 +182,20 @@ p
   background-size cover
 
 .about__wrapper
-  margin-right -1%
-  margin-left -1%
+  display table-layout
+  table-layout fixed
+  width 100%
 
-.person
-  display inline-block
-  vertical-align top
-  width 48%
+.persons__item
+  display table-cell
+  width 49%
   padding 1.75em 1.25em
-  margin-left 1%
-  margin-right 1%
+  vertical-align top
   background-color #EEE
-  -webkit-box-sizing border-box
-  -moz-box-sizing border-box
-  box-sizing border-box
+
+.persons__gap
+  display table-cell
+  width 2%
 
 .person__head
   text-transform uppercase

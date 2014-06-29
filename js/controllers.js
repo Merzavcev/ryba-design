@@ -30,9 +30,21 @@ function routeConfig($routeProvider) {
             controller : MenuController,
             templateUrl : 'portfolio.html'
         }).
+        when('/services', {
+            controller : MenuController,
+            templateUrl : 'services.html'
+        }).
+        when('/price', {
+            controller : MenuController,
+            templateUrl : 'price.html'
+        }).
         when('/about', {
             controller : MenuController,
             templateUrl : 'about.html'
+        }).
+        when('/contacts', {
+            controller : MenuController,
+            templateUrl : 'contacts.html'
         }).
 ////        when('/portfolio/:name', {
 ////            controller : SelectedItemController,

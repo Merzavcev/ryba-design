@@ -63,6 +63,10 @@ p {
 .ol {
   margin: 0.5em 0;
 }
+.ul sup,
+.ol sup {
+  font-size: 0.6em;
+}
 .ul__item,
 .ol__item {
   margin: 0.75em 0;

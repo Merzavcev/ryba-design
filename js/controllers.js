@@ -1,42 +1,68 @@
-/*global Mustache*/
-var ryba = angular.module('RybaModule', ['ngRoute']);
-
-//function SelectedItemController($scope, $routeParams) {
-//    console.log($routeParams.name);
-//}
-
-ryba.
-    controller('RybaController', function($scope){
-        $('.blackscreen').fadeOut('slow', function() {
-            $('body').removeClass('page_loading');
-        })
-    }).
+angular.module('RybaModule', ['ngRoute']).
+    factory('Page', ['$http', function($http) {
+        return {
+            'show' : function () {
+                $('.blackscreen').fadeOut('slow', function() {
+                    $('body').removeClass('page_loading');
+                });
+            },
+            'hide' : function () {
+                $('.blackscreen').fadeIn('slow', function(cb) {
+                    $('body').addClass('page_loading');
+                    if (cb) cb();
+                });
+            },
+            'getData' : function($scope, cb, errcb) {
+                return $http({method: 'GET', url: 'data/gallery.json', cache: true}).
+                    success(function(data) {
+                        $scope.projects = data;
+                        if (cb) cb();
+                    }).
+                    error(function(data) {
+                        // TODO handle to error page or try reload after some timeout
+                        console.log('error');
+                        if (errcb) errcb();
+                    });
+            }
+        };
+    }]).
+    controller('RybaController', ['$scope', 'Page', function($scope, Page){
+        Page.
+            getData($scope).
+            then(Page.show);
+    }]).
     controller('MenuCtrl', function ($scope, $rootScope, $http, $location){
         $scope.isActive = function (viewLocation) {
             return $location.path().indexOf(viewLocation) > -1;
         };
     }).
-    controller('PortfolioCtrl', function($scope, $rootScope, $http, $location) {
-        $http({method: 'GET', url: 'data/gallery.json', cache: true}).
-            success(function(data) {
-                $scope.projects = data;
-            }).
-            error(function(data) {
-                console.dir(data);
+    controller('SelectedItemCtrl', ['$scope', '$routeParams', 'Page', function ($scope, $routeParams, Page) {
+        var name = $routeParams.name;
+
+        function showProject() {
+            $scope.$parent.projects.some(function (item) {
+                if (item.name === name) {
+                    $scope.project = item;
+                    console.log($scope.project);
+                    return true;
+                }
             });
-    }).
-    controller('SelectedItemCtrl', function ($scope, $routeParams) {
-        console.dir($routeParams);
-    }).
+        }
+
+        Page.
+            getData($scope, showProject).
+            then(function () {
+                Page.show();
+            });
+    }]).
     config(function($routeProvider) {
     $routeProvider.
         when('/portfolio', {
-            controller : 'PortfolioCtrl',
             templateUrl : 'portfolio.html'
         }).
         when('/portfolio/:name', {
             controller : 'SelectedItemCtrl',
-            templateUrl : 'portfolio.html'
+            templateUrl : 'project.html'
         }).
         when('/services', {
             templateUrl : 'services.html'
@@ -56,13 +82,6 @@ ryba.
 });
 
 //var RYBA = {
-//    buildPortfolio : function(data) {
-//        var tmpl = $('.tmpl-projects').text();
-//        //debugger;
-//        $('.projects-grid__line').html(Mustache.render(tmpl, data));
-//
-//        return this;
-//    },
 //    buildGrid : function(data) {
 //        // debugger;
 //        var coverArray = {},
@@ -96,6 +115,3 @@ ryba.
 //        return this;
 //    }
 //};
-//window.onload = RYBA.updateMenu;
-//window.onhashchange = RYBA.updateMenu;
-//RYBA.init();

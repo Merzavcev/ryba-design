@@ -54,6 +54,19 @@
         </div>
     </div>
 </script>
+<script type="text/ng-template" id="project.html">
+    <section class="project">
+        <h1 class="sub-header project__title">{{project.title}}</h1>
+        <div class="project__wrapper">
+            <p class="project__title"><strong>Объект:</strong> <span>{{project.desc}}</span></p>
+            <p class="project__location"><strong>Расположение:</strong> <span>{{project.location}}</span></p>
+            <p class="project__year"><strong>Проектирование:</strong> <span>{{project.year}}</span></p>
+        </div>
+        <div class="gallery">
+            <div class="gallery__item" style="background-image: url('{{item}}')" ng-repeat="item in project.cover"></div>
+        </div>
+    </section>
+</script>
 <script type="text/ng-template" id="services.html">
     <h1 class="sub-header">Услуги</h1>
     <div class="paper">

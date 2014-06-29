@@ -1,49 +1,45 @@
 /*global Mustache*/
+var ryba = angular.module('RybaModule', ['ngRoute']);
 
-var rybaModule = angular.module('RybaModule', ['ngRoute']);
+//function SelectedItemController($scope, $routeParams) {
+//    console.log($routeParams.name);
+//}
 
-/**
- * Основной контроллер страницы
- * @param $scope
- */
-function RybaController($scope) {
-
-    $('.blackscreen').fadeOut('slow', function() {
-        $('body').removeClass('page_loading');
-    });
-}
-
-function MenuController($scope) {
-}
-
-function SelectedItemController($scope, $routeParams) {
-    console.log($routeParams.name);
-}
-
-function routeConfig($routeProvider) {
+ryba.
+    controller('RybaController', function($scope){
+        $('.blackscreen').fadeOut('slow', function() {
+            $('body').removeClass('page_loading');
+        })
+    }).
+    controller('MenuCtrl', function ($scope, $rootScope, $http, $location){
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
+    }).
+    config(function($routeProvider) {
     $routeProvider.
         when('/', {
-            controller : MenuController,
+//            controller : 'MenuCtrl',
             templateUrl : 'test.html'
         }).
         when('/portfolio', {
-            controller : MenuController,
+//            controller : 'MenuCtrl',
             templateUrl : 'portfolio.html'
         }).
         when('/services', {
-            controller : MenuController,
+            controller : 'MenuCtrl',
             templateUrl : 'services.html'
         }).
         when('/price', {
-            controller : MenuController,
+            controller : 'MenuCtrl',
             templateUrl : 'price.html'
         }).
         when('/about', {
-            controller : MenuController,
+            controller : 'MenuCtrl',
             templateUrl : 'about.html'
         }).
         when('/contacts', {
-            controller : MenuController,
+            controller : 'MenuCtrl',
             templateUrl : 'contacts.html'
         }).
 ////        when('/portfolio/:name', {
@@ -53,9 +49,7 @@ function routeConfig($routeProvider) {
         otherwise({
             redirectTo: '/'
         });
-}
-//
-rybaModule.config(routeConfig);
+});
 
 //var RYBA = {
 //    buildPortfolio : function(data) {

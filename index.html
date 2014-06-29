@@ -16,7 +16,7 @@
     <div class="blackscreen"></div>
     <div class="container layout">
       <header class="header">
-        <h1 class="header__h1"><a class="header__link" href="#portfolio">RYBA DESIGN</a></h1>
+        <h1 class="header__h1"><a class="header__link" href="#/portfolio">RYBA DESIGN</a></h1>
       </header>
       <section class="pages slider">
         <article ng-view></article>
@@ -94,13 +94,13 @@
         </article> -->
       </section>
       <footer class="footer">
-        <nav ng-controller="MenuController">
-          <ul class="footer__menu common-menu">
-            <li><a class="link" href="#/portfolio">Портфолио</a></li>
-            <li><a class="link" href="#/services">Услуги</a></li>
-            <li><a class="link" href="#/price">Цены</a></li>
-            <li><a class="link" href="#/about">О нас</a></li>
-            <li><a class="link" href="#/contacts">Контакты</a></li>
+        <nav>
+          <ul class="footer__menu common-menu" ng-controller="MenuCtrl">
+            <li><a class="link" href="#/portfolio" ng-class="{ 'link_bold' : isActive('/portfolio')}">Портфолио</a></li>
+            <li><a class="link" href="#/services" ng-class="{ 'link_bold' : isActive('/services')}">Услуги</a></li>
+            <li><a class="link" href="#/price" ng-class="{ 'link_bold' : isActive('/price')}">Цены</a></li>
+            <li><a class="link" href="#/about" ng-class="{ 'link_bold' : isActive('/about')}">О нас</a></li>
+            <li><a class="link" href="#/contacts" ng-class="{ 'link_bold' : isActive('/contacts')}">Контакты</a></li>
           </ul>
         </nav>
         <div class="footer__info">RYBA-Design — архитектурное проектирование коттеджей, малоэтажных зданий различного назначения, дизайн интерьеров, ландшафтный дизайн. Индивидуальный подход. Профессиональное исполнение.</div>

@@ -1,0 +1,245 @@
+.blackscreen
+  position fixed
+  z-index 10
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-color #000
+
+body
+  min-height 650px
+  background url(../img/lamp.jpg) top center repeat-x #d8d3cf
+  overflow auto
+
+.container
+  padding-right 15px
+  padding-left 15px
+  margin-right auto
+  margin-left auto
+
+.layout
+  max-width 680px
+  padding-top 130px
+  font 16px/20px 'PT Sans', sans-serif
+
+.slider
+  position relative
+  overflow hidden
+  height 365px
+
+.header
+  margin-bottom 20px
+
+.header__h1
+  text-align center
+  margin-top 0
+  font 2.25em/1 'Lato', sans-serif
+  text-shadow 0 1px rgba(255,255,255,0.5)
+
+.sub-header
+  text-align center
+  margin-top 0
+  margin-bottom 1em
+  font 1.1em/1.25 'PT Sans', sans-serif
+  text-shadow 0 1px rgba(255,255,255,0.5)
+
+.header__link:link,
+.header__link:visited
+  color #000
+  text-decoration none
+  -webkit-transition color .2s ease-in-out
+  transition color .2s ease-in-out
+
+.header__link:hover,
+.header__link:active
+  color #999
+  text-decoration none
+
+p
+  margin .75em 0
+
+.ul, .ol
+  margin .5em 0
+
+.ul__item, .ol__item
+  margin .75em 0
+
+.gallery
+  font-size 0
+  overflow-x auto
+  white-space nowrap
+  padding-bottom 5px
+
+.gallery__item
+  display inline-block
+  margin-left 5px
+  margin-right 5px
+  width 225px
+  height 150px
+  background-color #999
+  background-repeat no-repeat
+  background-position center
+  background-size cover
+  img
+    display none
+
+.common-menu
+  display -ms-flexbox
+  display -webkit-flex
+  display -moz-flex
+  display -ms-flex
+  display flex
+  -webkit-flex-pack justify
+  -moz-flex-pack justify
+  -ms-flex-pack justify
+  flex-pack justify
+  -webkit-justify-content space-between
+  -ms-justify-content space-between
+  -moz-justify-content space-between
+  justify-content space-between
+  margin-top 10px
+  padding-left 0
+  list-style none
+
+.footer__info
+  padding-top 2em
+  text-align center
+  text-shadow 0 1px rgba(255,255,255,0.5)
+
+.hidden
+  display none
+
+.b-link
+  color #333
+  text-decoration none
+
+.b-link_bold
+  font-weight bold
+
+.b-link:active,
+.b-link:hover
+  color #FFF
+  text-decoration none
+
+.b-link_active
+  font-weight bold
+  color #FFF
+  text-decoration none
+
+.slider__item
+  margin-top -100%
+  width 100%
+  height 100%
+  position absolute
+  top 0
+  overflow hidden
+  -webkit-transition margin-top .6s ease-in-out
+  transition margin-top .6s ease-in-out
+  &:target
+    margin-top 0
+
+.paper
+  overflow-y scroll
+  height 325px
+
+.portfolio
+  overflow-y auto
+
+.project
+
+.project__wrapper
+  padding .2em 0
+
+.project__object,
+.project__location,
+.project__year
+  font-size 1em
+  line-height 1.25
+  margin 0
+  padding-bottom .75em
+
+.projects-grid__line
+  margin 30px 0 10px
+
+.project-grid__item
+  position relative
+  display inline-block
+  width 210px
+  height 140px
+  background-color #000
+  margin-bottom 15px
+  margin-right 15px
+
+.project-grid__link
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-repeat no-repeat
+  background-position center
+  background-size cover
+
+.about__wrapper
+  margin-right -1%
+  margin-left -1%
+
+.person
+  display inline-block
+  vertical-align top
+  width 48%
+  padding 1.75em 1.25em
+  margin-left 1%
+  margin-right 1%
+  background-color #EEE
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+.person__head
+  text-transform uppercase
+  margin-bottom 20px
+
+.person__photo
+  background-color #DDD
+  float right
+  width 120px
+  height 150px
+  margin-left 5px
+  margin-bottom 5px
+  margin-right -1.25em
+
+.person__photo_shumilin
+  background url('../img/persons/shumilin.jpg') no-repeat
+  background-size cover
+
+.person__photo_bleskina
+  background url('../img/persons/bleskina.jpg') no-repeat
+  background-size cover
+
+.person__bio
+  font-size .9em
+  line-height 1.1em
+
+.contacts
+  width 70%
+  left 15%
+  right 15%
+
+.contacts__header
+  text-align center
+  font-size 1.05em
+  line-height 1.5em
+
+.contacts__phone, .contacts__persons
+  display inline-block
+  vertical-align top
+
+.contacts__phonenumber
+  padding-left .5em
+  font-size 1.05em
+
+.contacts__name
+  padding-left 2em
+  font-size 1em

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" ng-app="RybaModule">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,29 +9,22 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
     </head>
-    <body class="page_loading">
+    <body class="page_loading" ng-controller="RybaController">
     <div class="blackscreen"></div>
     <div class="container layout">
       <header class="header">
         <h1 class="header__h1"><a class="header__link" href="#portfolio">RYBA DESIGN</a></h1>
       </header>
       <section class="pages slider">
+        <article ng-view></article>
+<!--
         <article id="portfolio" class="slider__item portfolio">
           <h1 class="sub-header">Дизайн интерьера, архитектура, ландшафтный дизайн.</h1>
           <div class="projects-grid">
-            <div class="projects-grid__line">
-            </div>
-<!--             <div class="projects-grid__line">
-              <div class="project-grid__item">4</div>
-              <div class="project-grid__item">5</div>
-              <div class="project-grid__item">6</div>
-            </div>
-            <div class="projects-grid__line">
-              <div class="project-grid__item">4</div>
-              <div class="project-grid__item">5</div>
-              <div class="project-grid__item">6</div>
-            </div> -->
+            <div class="projects-grid__line"></div>
           </div>
         </article>
         <article id="services" class="slider__item">
@@ -98,49 +91,61 @@
             </div>
           </div>
           <p>или напишите нам письмо:<br><a class="b-link b-link_bold" href="mailto:rybadesign@mail.ru">rybadesign@mail.ru</a></p>
-        </article>
+        </article> -->
       </section>
       <footer class="footer">
-        <nav>
+        <nav ng-controller="MenuController">
           <ul class="footer__menu common-menu">
-            <li><a class="b-link" href="#portfolio">Портфолио</a></li>
-            <li><a class="b-link" href="#services">Услуги</a></li>
-            <li><a class="b-link" href="#price">Цены</a></li>
-            <li><a class="b-link" href="#about">О нас</a></li>
-            <li><a class="b-link" href="#contacts">Контакты</a></li>
+            <li><a class="b-link" href="#/portfolio">Портфолио</a></li>
+            <li><a class="b-link" href="#/services">Услуги</a></li>
+            <li><a class="b-link" href="#/price">Цены</a></li>
+            <li><a class="b-link" href="#/about">О нас</a></li>
+            <li><a class="b-link" href="#/contacts">Контакты</a></li>
           </ul>
         </nav>
-        <div class="footer__info">RYBA-Design — архитектурное проектирование коттеджей, малоэтажных зданий различного назначения, дизайн интерьеров, ландшафтный дизайн. Индивидуальный подход. Профессиональное исполнение.</div> 
+        <div class="footer__info">RYBA-Design — архитектурное проектирование коттеджей, малоэтажных зданий различного назначения, дизайн интерьеров, ландшафтный дизайн. Индивидуальный подход. Профессиональное исполнение.</div>
       </footer>
     </div>
-<script class="tmpl-projects" type="text/x-mustache-template">
-   {{#projects}}<div class="project-grid__item"><a href="#projects__{{name}}" data-name="{{name}}" class="project-grid__link showProjectLink" style="background-image: url('{{albumcover}}')"></a></div>{{/projects}}
+<script class="tmpl-projects" type="text/ng-template" id="test.html">
+    index
 </script>
-<script class="tmpl-project" type="text/x-mustache-template">
-  <article id="projects__{{name}}" class="slider__item">
-    <section class="project">
-      <h1 class="sub-header project__title">{{title}}</h1>
-      <div class="project__wrapper">
-        <p class="project__title"><strong>Объект:</strong> <span>{{desc}}</span></p>
-        <p class="project__location"><strong>Расположение:</strong> <span>{{location}}</span></p>
-        <p class="project__year"><strong>Проектирование:</strong> <span>{{year}}</span></p>
-      </div>
-      <div class="gallery">
-        {{#cover}}<div class="gallery__item" style="background-image: url('{{.}}')"></div>{{/cover}}
-      </div>
-    </section>
-  </article>
+<script class="tmpl-projects" type="text/ng-template" id="portfolio.html">
+    portfolio
 </script>
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
-    <script src="js/vendor/mustache.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script>
-        // var _gaq=[['_setaccount','ua-xxxxx-x'],['_trackpageview']];
-        // (function(d,t){var g=d.createelement(t),s=d.getelementsbytagname(t)[0];
-        // g.src='//www.google-analytics.com/ga.js';
-        // s.parentnode.insertbefore(g,s)}(document,'script'));
-    </script>
-
+<script class="tmpl-projects" type="text/ng-template" id="about.html">
+    <h1 class="sub-header">О нас</h1>
+    <div class="about__wrapper">
+        <div class="person">
+            <div class="person__photo person__photo_shumilin"></div>
+            <div class="person__head">Алексей Шумилин</div>
+            <div class="person__bio">Архитектор<br><br>Выпускник Московского Архитектурного Института 2010 г.<br><br>Архитектурная практика с 2006 г по различным направлениям: проектирование общественных и жилых зданий, градостроительное проектирование, ландшафтное проектирование, дизайн интерьеров.</div>
+        </div
+                ><div class="person">
+        <div class="person__photo person__photo_bleskina"></div>
+        <div class="person__head">Анастасия Блёскина</div>
+        <div class="person__bio">Архитектор<br><br>Выпускница Ярославского Государственного Технического Университета 2015 г.<br><br>Архитектурная практика с 2013 г по направлениям: проектирование жилых зданий, дизайн интерьера.</div>
+    </div>
+    </div>
+</script>
+<!--<script class="tmpl-projects" type="text/ng-template" id="projectItemGrid.html">-->
+   <!--<div class="project-grid__item"><a href="#projects__{{name}}" data-name="{{name}}" class="project-grid__link showProjectLink" style="background-image: url('{{albumcover}}')"></a></div>-->
+<!--</script>-->
+<!--<script class="tmpl-project" type="text/ng-template" id="projectItemSelected">-->
+  <!--<article id="projects__{{name}}" class="slider__item">-->
+    <!--<section class="project">-->
+      <!--<h1 class="sub-header project__title">{{title}}</h1>-->
+      <!--<div class="project__wrapper">-->
+        <!--<p class="project__title"><strong>Объект:</strong> <span>{{desc}}</span></p>-->
+        <!--<p class="project__location"><strong>Расположение:</strong> <span>{{location}}</span></p>-->
+        <!--<p class="project__year"><strong>Проектирование:</strong> <span>{{year}}</span></p>-->
+      <!--</div>-->
+      <!--<div class="gallery">-->
+        <!--{{#cover}}<div class="gallery__item" style="background-image: url('{{.}}')"></div>{{/cover}}-->
+      <!--</div>-->
+    <!--</section>-->
+  <!--</article>-->
+<!--</script>-->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="js/controllers.js"></script>
     </body>
 </html>

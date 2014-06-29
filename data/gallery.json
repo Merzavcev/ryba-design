@@ -1,39 +1,37 @@
-{
-    "projects" : [
-        {
-            "id" : 1,
-            "name" : "house",
-            "title" : "Интерьер дома",
-            "desc" : "Описание проекта интерьера дома",
-            "location" : "Ярославль",
-            "year" : 2014,
-            "images" : [
-                "img/gallery/house/01.jpg",
-                "img/gallery/house/02.jpg"
-            ],
-            "cover" : [
-                "img/gallery/house/01.jpg",
-                "img/gallery/house/02.jpg"
-            ],
-            "albumcover" : "img/gallery/house/01.jpg"
-        },
-        {
-            "id" : 3,
-            "name" : "park",
-            "title" : "Интерьер дома",
-            "desc" : "Описание проекта интерьера дома",
-            "location" : "Рыбинск",
-            "year" : 2014,
-            "images" : [
-                "img/gallery/park/01.jpg",
-                "img/gallery/park/02.jpg"
-            ],
-            "cover" : [
-                "img/gallery/park/01.cover.jpg",
-                "img/gallery/park/02.cover.jpg",
-                "img/gallery/park/03.cover.jpg"
-            ],
-            "albumcover" : "img/gallery/park/01.cover.jpg"
-        }
-    ]
-}
+[
+    {
+        "id" : 1,
+        "name" : "house",
+        "title" : "Интерьер дома",
+        "desc" : "Описание проекта интерьера дома",
+        "location" : "Ярославль",
+        "year" : 2014,
+        "images" : [
+            "img/gallery/house/01.jpg",
+            "img/gallery/house/02.jpg"
+        ],
+        "cover" : [
+            "img/gallery/house/01.jpg",
+            "img/gallery/house/02.jpg"
+        ],
+        "albumcover" : "img/gallery/house/cover.jpg"
+    },
+    {
+        "id" : 2,
+        "name" : "park",
+        "title" : "Интерьер дома",
+        "desc" : "Описание проекта интерьера дома",
+        "location" : "Рыбинск",
+        "year" : 2014,
+        "images" : [
+            "img/gallery/park/01.jpg",
+            "img/gallery/park/02.jpg"
+        ],
+        "cover" : [
+            "img/gallery/park/cover.jpg",
+            "img/gallery/park/02.cover.jpg",
+            "img/gallery/park/03.cover.jpg"
+        ],
+        "albumcover" : "img/gallery/park/cover.jpg"
+    }
+]

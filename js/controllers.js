@@ -13,41 +13,45 @@ ryba.
     }).
     controller('MenuCtrl', function ($scope, $rootScope, $http, $location){
         $scope.isActive = function (viewLocation) {
-            return viewLocation === $location.path();
+            return $location.path().indexOf(viewLocation) > -1;
         };
+    }).
+    controller('PortfolioCtrl', function($scope, $rootScope, $http, $location) {
+        $http({method: 'GET', url: 'data/gallery.json', cache: true}).
+            success(function(data) {
+                $scope.projects = data;
+            }).
+            error(function(data) {
+                console.dir(data);
+            });
+    }).
+    controller('SelectedItemCtrl', function ($scope, $routeParams) {
+        console.dir($routeParams);
     }).
     config(function($routeProvider) {
     $routeProvider.
-        when('/', {
-//            controller : 'MenuCtrl',
-            templateUrl : 'test.html'
-        }).
         when('/portfolio', {
-//            controller : 'MenuCtrl',
+            controller : 'PortfolioCtrl',
+            templateUrl : 'portfolio.html'
+        }).
+        when('/portfolio/:name', {
+            controller : 'SelectedItemCtrl',
             templateUrl : 'portfolio.html'
         }).
         when('/services', {
-            controller : 'MenuCtrl',
             templateUrl : 'services.html'
         }).
         when('/price', {
-            controller : 'MenuCtrl',
             templateUrl : 'price.html'
         }).
         when('/about', {
-            controller : 'MenuCtrl',
             templateUrl : 'about.html'
         }).
         when('/contacts', {
-            controller : 'MenuCtrl',
             templateUrl : 'contacts.html'
         }).
-////        when('/portfolio/:name', {
-////            controller : SelectedItemController,
-////            templateUrl : 'projectItemSelected.html'
-////        }).
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/portfolio'
         });
 });
 
@@ -72,43 +76,6 @@ ryba.
 //            //coverArray[currentItem.name] = currentItem.cover[0];
 //            //$('[data-name="' + currentItem.name + '"]').css('background-image','url('+ currentItem.cover[0] +')');
 //            $('.pages').append(Mustache.render(tmpl, currentItem));
-//        }
-//
-//        return this;
-//    },
-//    // показать страницу, убрать плавно blackscreen
-//    show : function() {
-//        $('.blackscreen').fadeOut('slow', function() {
-//            $('body').removeClass('page_loading');
-//        });
-//
-//        return this;
-//    },
-//    // логика учета состояния меню
-//    updateMenu : function() {
-//        var hash = window.location.hash,
-//            $activeHashItem = $('.common-menu [href=' + hash + ']'),
-//            $activeItem = $('.b-link_active'),
-//            defaultItem = '#portfolio',
-//            setActive = function() {
-//                if ($activeHashItem.length) {
-//                    $('.common-menu [href=' + hash + ']').addClass('b-link_active');
-//                }
-//            };
-//
-//        if(hash === ''){
-//            window.location += defaultItem;
-//
-//            return false;
-//        }
-//
-//        if ($activeItem.length > 0) {
-//            if (hash !== $activeItem.attr('href')) {
-//                $activeItem.removeClass('b-link_active');
-//                setActive();
-//            }
-//        } else {
-//            setActive();
 //        }
 //
 //        return this;

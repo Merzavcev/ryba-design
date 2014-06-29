@@ -231,8 +231,7 @@ p {
 }
 .contacts {
   width: 70%;
-  left: 15%;
-  right: 15%;
+  margin: 0 auto;
 }
 .contacts__header {
   text-align: center;

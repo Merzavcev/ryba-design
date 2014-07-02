@@ -1,5 +1,7 @@
 css/bootstrap-theme.css
 css/bootstrap.css
+bower_components/*
+.idea/*
 fonts/glyphicons-halflings-regular.eot
 fonts/glyphicons-halflings-regular.svg
 fonts/glyphicons-halflings-regular.ttf

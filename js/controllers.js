@@ -43,10 +43,10 @@ angular.module('RybaModule', ['ngRoute']).
             $scope.$parent.projects.some(function (item) {
                 if (item.name === name) {
                     $scope.project = item;
-                    console.log($scope.project);
                     return true;
                 }
             });
+            // TODO http://lokeshdhakar.com/projects/lightbox2/
         }
 
         Page.
@@ -80,38 +80,3 @@ angular.module('RybaModule', ['ngRoute']).
             redirectTo: '/portfolio'
         });
 });
-
-//var RYBA = {
-//    buildGrid : function(data) {
-//        // debugger;
-//        var coverArray = {},
-//            projects = data.projects,
-//            l = projects.length,
-//            tmpl = $('.tmpl-project').text();
-//
-//        // последние добавленные проекты стоят первыми
-//        for (var i = l - 1; i >= 0; i--) {
-//            var currentItem = projects[i];
-//            //coverArray[currentItem.name] = currentItem.cover[0];
-//            //$('[data-name="' + currentItem.name + '"]').css('background-image','url('+ currentItem.cover[0] +')');
-//            $('.pages').append(Mustache.render(tmpl, currentItem));
-//        }
-//
-//        return this;
-//    },
-//    init : function () {
-//    // страница работает только с данными о проектах
-//        $.
-//            when($.getJSON('data/gallery.json')).
-//            then(function(data) {
-//                RYBA.
-//                    buildPortfolio(data).
-//                    buildGrid(data).
-//                    show();
-//            }, function() {
-//                console.log('No data');
-//            });
-//
-//        return this;
-//    }
-//};

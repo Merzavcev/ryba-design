@@ -40,7 +40,7 @@
         <div class="projects-grid">
             <div class="projects-grid__line">
                 <div class="project-grid__item" ng-repeat="project in projects">
-                    <a href="#/portfolio/{{project.name}}" data-name="{{project.name}}" class="project-grid__link showProjectLink" style="background-image: url('img/gallery/{{project.name}}/cover.jpg')"></a>
+                    <a href="#/portfolio/{{project.name}}" data-name="{{project.name}}" class="project-grid__link showProjectLink" style="background-image: url('{{project.albumcover}}')"></a>
                 </div>
             </div>
         </div>
